@@ -3,12 +3,16 @@ package main
 import (
 	"fmt"
 	"github.com/urfave/cli/v2"
+	"go-yapi-client/config"
 	"log"
 	"os"
 )
 
+var CONFIG_DATA map[string]string
+
 // 入口函数
 func main() {
+	config.GetConfig()
 	app := &cli.App{
 		Name:  "yapi client",
 		Usage: "commit yapi document",
