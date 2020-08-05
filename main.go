@@ -12,7 +12,7 @@ var CONFIG_DATA map[string]string
 
 // 入口函数
 func main() {
-	config.GetConfig()
+	config.GetConfig("./env.ini")
 	app := &cli.App{
 		Name:  "yapi client",
 		Usage: "commit yapi document",
@@ -24,6 +24,14 @@ func main() {
 			if argc == 1 {
 				// 直接执行提交 提交文档 todo
 				return nil
+			} else if argc == 1 { // todo: show help message
+
+			} else if argc == 2 { // todo: submit a markdown doc
+
+			} else if argc == 3 { // todo: submit a file or some files under a dir with a token from shell ENV
+
+			} else if argc == 4 { // todo: submit a file or some files under a dir with a token from token flag
+
 			}
 			// 当参数个数多于 1 个，需要按值处理 todo
 			fileName := context.String("f")
